@@ -1,5 +1,5 @@
-require "./lib/linked_list"
-require "./lib/node"
+require './lib/linked_list'
+require './lib/node'
 
 RSpec.describe LinkedList do
   it 'is an instance of linked list' do
@@ -16,10 +16,11 @@ RSpec.describe LinkedList do
 
   it 'has append method' do
     list = LinkedList.new 
-    node = Node.new("doop")
-    
+   
     expect(list.append("doop")).to eq("doop")
+    expect(list.head).to be_instance_of(Node)
+    expect(list.head.next_node).to eq nil
   end
 
-  it 'has a next node' do
+  
 end
