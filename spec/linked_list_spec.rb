@@ -20,12 +20,40 @@ RSpec.describe LinkedList do
     expect(list.append("doop")).to eq("doop")
     expect(list.head).to be_instance_of(Node)
     expect(list.head.next_node).to eq nil
-     expect(list.count).to eq(1)
-    # expect(list.to_string).to eq("doop")
+  end
+  
+  it 'has a count method' do
+    list = LinkedList.new
+    list.append("doop")
 
-
-    
+    expect(list.count).to eq(1)
   end
 
-  
+  xit 'has a count method' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("doop")
+    list.append("doop")
+    list.append("doop") 
+    list.append("doop")
+    list.append("doop")
+    list.append("doop")
+    list.append("doop")
+    expect(list.count).to eq(1)
+  end
+
+  it 'is a string' do
+    list = LinkedList.new
+    list.append("doop")
+    
+    expect(list.to_string).to eq("doop")
+  end
+    
+  xit 'is a string' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("doop")
+    list.append("doop")
+    expect(list.to_string).to eq("doop")
+  end
 end
