@@ -10,8 +10,7 @@ class LinkedList
     if @head.nil?
       @head = Node.new(data)  
     else
-      data.next_node = @head
-      @head = data
+      @head.next_node = Node.new(data)
     end
     @count += 1
     data
