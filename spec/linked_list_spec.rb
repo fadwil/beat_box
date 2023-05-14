@@ -29,17 +29,15 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(1)
   end
 
-  xit 'has a count method' do
-    list = LinkedList.new
-    list.append("doop")
-    list.append("doop")
-    list.append("doop")
-    list.append("doop") 
-    list.append("doop")
-    list.append("doop")
-    list.append("doop")
-    list.append("doop")
-    expect(list.count).to eq(1)
+  it 'can append multiple nodes' do
+  list = LinkedList.new
+  expect(list.append("doop")).to eq("doop")
+  expect(list).to eq(list)
+  expect(list.head).to be_instance_of(Node)
+  expect(list.head.next_node).to eq nil
+
+  expect(list.append("deep")).to eq("deep")
+  expect(list.head.next_node).to be_instance_of(Node)
   end
 
   it 'is a string' do
@@ -49,11 +47,21 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("doop")
   end
     
-  xit 'is a string' do
+
+  it 'has a prepend method' do
     list = LinkedList.new
-    list.append("doop")
-    list.append("doop")
-    list.append("doop")
-    expect(list.to_string).to eq("doop")
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    expect(list.prepend).to eq("dop")
+    expect(list.to_string).to eq("dop plop suu")
   end
 end
+
+    
+    
+    
+
+    
+
+  
