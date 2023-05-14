@@ -12,6 +12,7 @@ RSpec.describe Node do
 
     expect(node.data).to eq("plop")
   end
+  
   it 'has a next node' do
     node = Node.new("plop")
 
