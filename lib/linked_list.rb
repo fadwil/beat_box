@@ -28,7 +28,30 @@ class LinkedList
     end
     data
   end
-   
+  
+  def find(position, elements)
+    string = to_string.split
+    found = string[position, elements] 
+    found.join(" ")
+  end
+    # if position == 0
+     
+    # else
+    #   current_node = @head
+    #   node = current_node.next_node
+    #   (position).times do 
+    #     current_node = current_node.next_node
+    #   end
+    #   current_node = @head
+    #   node = current_node.next_node
+    #   (elements + 1).times do
+    #     current_node = current_node.next_node
+    #     current_node.next_node = node
+    #     # node.elements
+    #   end
+    # end
+  
+
   def insert(position, data)
     if position == 0 
       prepend(data)
