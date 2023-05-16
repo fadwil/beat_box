@@ -1,8 +1,7 @@
 class BeatBox
-  attr_reader :list, :data
+  attr_reader :list
   def initialize
     @list = LinkedList.new
-    @data = data
   end
 
   def append(data)
@@ -10,6 +9,7 @@ class BeatBox
     words.each do |word|
     @list.append(word)
     end
+    data
   end
 
   def count
