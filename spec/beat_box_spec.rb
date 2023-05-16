@@ -24,8 +24,8 @@ RSpec.describe BeatBox do
   it 'has append method' do
     bb = BeatBox.new
     expect(bb.list.head).to eq nil
-    bb.append("deep doo ditt")
-    expect(bb.list.append("deep doo ditt")).to eq("deep doo ditt")
+    expect(bb.append("deep doo ditt")).to eq("deep doo ditt")
+   
   end
 
   it 'can access head data' do
