@@ -109,21 +109,38 @@ class LinkedList
     end
   end
 
-  # def pop
-  #   current_node = @head
-  #   until current_node.next_node.nil?
-  #     current_node = current_node.next_node
-  #   end
-  #   last_node = current_node.next_node
-  #   current_node.next_node = nil
-  #   last_node
-  # end
+  def pop
+    if @head.nil?
+      return nil
+    end
+    current_node = @head
+    if !current_node.next_node.nil?
+      until current_node.next_node.next_node.nil?
+        # reassigning current node to the next node
+        # until the next node is second to last
+        current_node = current_node.next_node
+      end
+      # assign the node to be popped, which the current node is pointing to
+      popped_node = current_node.next_node
+      current_node.next_node = nil
+      popped_node.data
+    else
+      # if the current node's next node does equal nil
+      # there is only one node
+      @head = nil
+      current_node.data
+    end
+  end
 # define the head of the linked list
 # current_node = @head
 # until current_node.next_node.nil?
 # need to store last nodes data to a variable
 # also need to remove the reference to next_node from the list
 # the second to last node needs to point to the node that points to nil
+
+# current_node.next_node.next_node.nil?
+# current_node = current_node.next_node 
+# = second to last
 
 end
 
