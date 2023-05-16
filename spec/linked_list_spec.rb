@@ -102,8 +102,35 @@ RSpec.describe LinkedList do
     list.append("blop")
     expect(list.to_string).to eq("deep woo shi shu blop")
     expect(list.pop).to eq("blop")
+    expect(list.to_string).to eq("deep woo shi shu")
     expect(list.pop).to eq("shu")
     expect(list.to_string).to eq("deep woo shi")
+  end
+
+  it 'has a pop method that works with single node' do
+    list = LinkedList.new
+    list.prepend("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.pop).to eq("blop")
+    expect(list.to_string).to eq("deep woo shi shu")
+    expect(list.pop).to eq("shu")
+    expect(list.to_string).to eq("deep woo shi")
+    expect(list.pop).to eq("shi")
+    expect(list.to_string).to eq("deep woo")
+    expect(list.pop).to eq("woo")
+    expect(list.to_string).to eq("deep")
+    expect(list.pop).to eq("deep")
+    expect(list.to_string).to eq("")
+  end
+
+  it 'has a pop method that works with empty list' do
+    list = LinkedList.new
+    expect(list.pop).to eq nil
+    expect(list.to_string).to eq("")
   end
 end
 
