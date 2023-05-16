@@ -9,5 +9,11 @@ RSpec.describe BeatBox do
     expect(bb).to be_instance_of(BeatBox)
   end
 
+  it 'has a list' do
+    bb = BeatBox.new
+
+    expect(bb.list).to be_instance_of(LinkedList)
+  end
+
   
 end
