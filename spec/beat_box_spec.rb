@@ -8,4 +8,6 @@ RSpec.describe BeatBox do
 
     expect(bb).to be_instance_of(BeatBox)
   end
+
+  
 end
