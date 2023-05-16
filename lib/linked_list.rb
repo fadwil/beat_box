@@ -30,8 +30,8 @@ class LinkedList
   end
   
   def find(position, elements)
-    string = to_string.split
-    found = string[position, elements] 
+    string_array = to_string.split
+    found = string_array[position, elements] 
     found.join(" ")
   end
     # if position == 0
@@ -97,6 +97,34 @@ class LinkedList
     string << "#{current_node.data}"
     end
   end
+
+  def includes?(data)
+    string = to_string.split
+    string.each do |element|
+      if element.include?(data)
+        return true
+      else
+        return false
+      end
+    end
+  end
+
+  # def pop
+  #   current_node = @head
+  #   until current_node.next_node.nil?
+  #     current_node = current_node.next_node
+  #   end
+  #   last_node = current_node.next_node
+  #   current_node.next_node = nil
+  #   last_node
+  # end
+# define the head of the linked list
+# current_node = @head
+# until current_node.next_node.nil?
+# need to store last nodes data to a variable
+# also need to remove the reference to next_node from the list
+# the second to last node needs to point to the node that points to nil
+
 end
 
 # need a current node as a placeholder to traverse the linked list
