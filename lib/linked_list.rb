@@ -125,7 +125,7 @@ class LinkedList
       current_node.next_node = nil
       popped_node.data
     else
-      # if the current node's next node does equal nil
+      # if the current node's next node equals nil
       # there is only one node
       @head = nil
       current_node.data
